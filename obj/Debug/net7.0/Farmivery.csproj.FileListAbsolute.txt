@@ -1,0 +1,6 @@
+C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.csproj.AssemblyReference.cache
+C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.AssemblyInfoInputs.cache
+C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.AssemblyInfo.cs
+C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.csproj.CoreCompileInputs.cache
+C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.MvcApplicationPartsAssemblyInfo.cache
