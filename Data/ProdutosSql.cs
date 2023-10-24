@@ -8,9 +8,11 @@ public class ProdutosSql : Database, IProdutosData
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "INSERT INTO Produtos VALUE (@name)";
+        cmd.CommandText = "INSERT INTO Produtos VALUES (@descricao, @preco, @prod_qtd)";
 
-        cmd.Parameters.AddWithValue("@name", produto.Nome);
+        cmd.Parameters.AddWithValue("@descricao", produto.Descricao);
+        cmd.Parameters.AddWithValue("@preco", produto.Preco);
+        cmd.Parameters.AddWithValue("@prod_qtd", produto.ProdQtd);
 
         cmd.ExecuteNonQuery();
     }
@@ -34,13 +36,15 @@ public class ProdutosSql : Database, IProdutosData
 
         SqlDataReader reader = cmd.ExecuteReader();
 
-        List<Produtos> lista = new List<Produtos>();
+        List<Produtos> lista = new();
 
         while(reader.Read())
         {
             Produtos produto = new Produtos();
             produto.ProdutoId = reader.GetInt32(0);
-            produto.Nome = reader.GetString(1);
+            produto.Descricao = reader.GetString(1);
+            produto.Preco = reader.GetDecimal(2);
+            produto.ProdQtd = reader.GetInt32(3);
 
             lista.Add(produto);
         }
@@ -51,9 +55,9 @@ public class ProdutosSql : Database, IProdutosData
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "SELECT * FORM Produtos WHERE Nome LIKE @name";
+        cmd.CommandText = "SELECT * FORM Produtos WHERE Descricao LIKE @descricao";
 
-        cmd.Parameters.AddWithValue("@nome", "%" + search + "%");
+        cmd.Parameters.AddWithValue("@descricao", "%" + search + "%");
 
         SqlDataReader reader = cmd.ExecuteReader();
 
@@ -63,7 +67,9 @@ public class ProdutosSql : Database, IProdutosData
         {
             Produtos produto = new Produtos();
             produto.ProdutoId = reader.GetInt32(0);
-            produto.Nome = reader.GetString(1);
+            produto.Descricao = reader.GetString(1);
+            produto.Preco = reader.GetDecimal(2);
+            produto.ProdQtd = reader.GetInt32(3);
 
             lista.Add(produto);
         }
@@ -82,11 +88,13 @@ public class ProdutosSql : Database, IProdutosData
 
         if (reader.Read())
         {
-            Produtos produtos = new Produtos();
-            produtos.ProdutoId = reader.GetInt32(0);
-            produtos.Nome = reader.GetString(1);
+            Produtos produto = new Produtos();
+            produto.ProdutoId = reader.GetInt32(0);
+            produto.Descricao = reader.GetString(1);
+            produto.Preco = reader.GetDecimal(2);
+            produto.ProdQtd = reader.GetInt32(3);
 
-            return produtos;
+            return produto;
         }
 
         return null;
@@ -97,10 +105,16 @@ public class ProdutosSql : Database, IProdutosData
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
         cmd.CommandText = @"UPDATE Produtos
-                            SET Nome = @Nome
+                            SET Descricao = @descricao,
+                            Preco = @preco,
+                            ProdQtd = @prod_qtd
                             WHERE ProdutoId = @id";
         
+        cmd.Parameters.AddWithValue("@descricao", produtos.Descricao);
+        cmd.Parameters.AddWithValue("@preco", produtos.Preco);
+        cmd.Parameters.AddWithValue("@prod_qtd", produtos.ProdQtd);
         cmd.Parameters.AddWithValue("@id", id);
-        cmd.Parameters.AddWithValue("@Nome", produtos.Nome);
+
+        cmd.ExecuteNonQuery();
     }
 }

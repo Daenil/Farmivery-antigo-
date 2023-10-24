@@ -1,5 +1,27 @@
-@model List<Farmivery.Models.Produtos>
+@model List<Produtos>
 
 @{ Layout = "/Views/Shared/Layout.cshtml"; }
 
-    <table class="table tanble-hover"></table>
+    <table class="table tanble-hover">
+        <tr>
+            <th>Id</th>
+            <th>Descricao</th>
+            <th>Preco</th>
+            <th>Quantidade</th>
+            <th colspan="2">&nbsp;</th>
+        </tr>
+
+        @foreach(var produtos in Model)
+        {
+            <tr>
+                <td>@produtos.ProdutoId</td>
+                <td>@produtos.Descricao</td>
+                <td>@produtos.Preco</td>
+                <td>@produtos.ProdQtd</td>
+                <td><a href="/produtos/delete/@produtos.ProdutoId">Delete</a></td>
+                <td><a href="/produtos/update/@produtos.ProdutoId">Update</a></td>
+            </tr>
+        }
+    </table>
+
+    <a href="/produtos/create" class="btn btn-primary">Create</a>

@@ -26,6 +26,7 @@ public class ProdutosController : Controller
     [HttpGet]
     public ActionResult Create()
     {
+        ViewBag.Produtos = data.Read();
         return View();
     }
 
@@ -49,6 +50,8 @@ public class ProdutosController : Controller
 
         if(produtos == null)
             return RedirectToAction("Index");
+
+        ViewBag.Produtos = data.Read();
 
         return View(produtos); 
     }
