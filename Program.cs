@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Adição de Middlewares
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSingleton<ProdutosData>();
+builder.Services.AddTransient<IProdutosData, ProdutosSql>();
 
 var app = builder.Build();
 

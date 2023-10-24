@@ -1,0 +1,25 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/task/index">Task</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create</li>
+    </ol>
+</nav>
+
+<form action="/task/create" method="POST">
+    <input name="title" class="form-control" placeholder="Title"/>
+    <input name="description" class="form-control" placeholder="Description"/>
+    <input name="points" class="form-control" placeholder="Points"/>
+    <input name="priority" class="form-control" placeholder="Priority"/>
+
+    <select name="ProdutoId" class="form-control">
+        @foreach(var produtos in ViewBag.Produtos)
+        {
+        <option value="@produtos.ProdutoId">@produtos.Nome</option>
+        }
+    </select>
+
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>

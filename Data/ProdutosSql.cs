@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using System.Data.SqlTypes;
 using Microsoft.Data.SqlClient;
 
@@ -31,7 +32,7 @@ public class ProdutosSql : Database, IProdutosData
         cmd.Connection = connection;
         cmd.CommandText = "SELECT * FROM Produtos";
 
-        SqlSataReader reader = cmd.ExecuteReader();
+        SqlDataReader reader = cmd.ExecuteReader();
 
         List<Produtos> lista = new List<Produtos>();
 
@@ -43,6 +44,7 @@ public class ProdutosSql : Database, IProdutosData
 
             lista.Add(produto);
         }
+        return lista;
     }
 
     public List<Produtos> Read(string search)
@@ -65,5 +67,40 @@ public class ProdutosSql : Database, IProdutosData
 
             lista.Add(produto);
         }
+        return lista;
+    }
+
+    public Produtos Read(int id)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = connection;
+        cmd.CommandText = "SELECT * FROM Produtos WHERE ProdutoId = @id";
+
+        cmd.Parameters.AddWithValue("@id", id);
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        if (reader.Read())
+        {
+            Produtos produtos = new Produtos();
+            produtos.ProdutoId = reader.GetInt32(0);
+            produtos.Nome = reader.GetString(1);
+
+            return produtos;
+        }
+
+        return null;
+    }
+
+    public void Update(int id, Produtos produtos)
+    {
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = connection;
+        cmd.CommandText = @"UPDATE Produtos
+                            SET Nome = @Nome
+                            WHERE ProdutoId = @id";
+        
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@Nome", produtos.Nome);
     }
 }

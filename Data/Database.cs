@@ -1,3 +1,5 @@
+using Microsoft.Data.SqlClient;
+
 public abstract class Database : IDisposable
 {
     protected SqlConnection connection;
