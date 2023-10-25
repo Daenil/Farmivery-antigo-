@@ -3,8 +3,9 @@ use Farmivery
 
 create table Produtos
 (
-	produtoId	int				primary key		identity,
-	descricao	varchar(60)		not null,
+	produtoId	int				not null	primary key		identity,
+	nome		varchar(20)		not null,
+	descricao	varchar(350)		not null,
 	preco		decimal(10,2)	not null,
-	prod_qtd	int				not null
+	prod_qtd	int				not null,
 )

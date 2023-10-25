@@ -2,22 +2,16 @@
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/produtos/index">Task</a></li>
+        <li class="breadcrumb-item"><a href="/produtos/index">Produtos</a></li>
         <li class="breadcrumb-item active" aria-current="page">Create</li>
     </ol>
 </nav>
 
 <form action="/produtos/create" method="POST">
+    <input name="Nome" class="form-controll" placeholder="Nome"/>
     <input name="Descricao" class="form-control" placeholder="Descricao"/>
     <input name="Preco" class="form-control" placeholder="Preco"/>
     <input name="ProdQtd" class="form-control" placeholder="ProdQtd"/>
-
-    <select name="ProdutoId" class="form-control">
-        @foreach(var produtos in ViewBag.Produtos)
-        {
-        <option value="@produtos.ProdutoId">@produtos.Descricao</option>
-        }
-    </select>
 
     <br/>
     <button class="btn btn-primary">Salvar</button>

@@ -1,0 +1,23 @@
+@model Produtos
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/produtos/index">Produtos</a></li>
+        <li class="breadcrum-item active" aria-current="page">Update</li>
+    </ol>
+</nav>
+
+<form action="/task/update/@Model.ProdutoId" method="POST">
+    <input name="ProdutoId" class="form-controll" value="@Model.ProdutoId" />
+    <input name="Nome" class="form-controll" value="@Model.Nome" />
+    <input name="Descricao" class="form-controll" value="@Model.Descricao" />
+    <input name="Preco" class="form-controll" value="@Model.Preco" />
+    <input name="ProdQtd" class="form-controll" value="@Model.ProdQtd" />
+        @foreach(var produtos in ViewBag.produtos)
+        {
+            <option value="@produtos.ProdutoId">@produtos.Nome</option>
+        }
+        <br/>
+        <button class="btn btn-primary">Atualizar</button>
+</form>
