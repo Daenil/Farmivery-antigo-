@@ -3,15 +3,16 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/produtos/index">Produtos</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Create</li>
+        <li class="breadcrumb-item active" aria-current="page">Criar Produto</li>
     </ol>
 </nav>
 
 <form action="/produtos/create" method="POST">
-    <input name="Nome" class="form-controll" placeholder="Nome"/>
+    <input name="Nome" class="form-control" placeholder="Nome"/>
     <input name="Descricao" class="form-control" placeholder="Descricao"/>
     <input name="Preco" class="form-control" placeholder="Preco"/>
-    <input name="ProdQtd" class="form-control" placeholder="ProdQtd"/>
+    <input name="ProdQtd" class="form-control" placeholder="Quantidade"/>
+    <input name="Imagem" class="form-control" placeholder="Imagem Link" />
 
     <br/>
     <button class="btn btn-primary">Salvar</button>

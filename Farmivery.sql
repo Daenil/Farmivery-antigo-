@@ -8,4 +8,7 @@ create table Produtos
 	descricao	varchar(350)		not null,
 	preco		decimal(10,2)	not null,
 	prod_qtd	int				not null,
+	imagem		varchar(255)	null
 )
+
+select * from Produtos

@@ -8,16 +8,13 @@
     </ol>
 </nav>
 
-<form action="/task/update/@Model.ProdutoId" method="POST">
-    <input name="ProdutoId" class="form-controll" value="@Model.ProdutoId" />
-    <input name="Nome" class="form-controll" value="@Model.Nome" />
-    <input name="Descricao" class="form-controll" value="@Model.Descricao" />
-    <input name="Preco" class="form-controll" value="@Model.Preco" />
-    <input name="ProdQtd" class="form-controll" value="@Model.ProdQtd" />
-        @foreach(var produtos in ViewBag.produtos)
-        {
-            <option value="@produtos.ProdutoId">@produtos.Nome</option>
-        }
+<form action="/produtos/update/@Model.ProdutoId" method="POST">
+    <input name="Nome" class="form-control" value="@Model.Nome" placeholder="Nome" />
+    <input name="Descricao" class="form-control" value="@Model.Descricao" placeholder="Descricao" />
+    <input name="Preco" class="form-control" value="@Model.Preco" placeholder="Preco" />
+    <input name="ProdQtd" class="form-control" value="@Model.ProdQtd" placeholder="Quantidade" />
+    <input name="Imagem" class="form-control" value="@Model.Imagem" placeholder="Link Imagem" />
+
         <br/>
         <button class="btn btn-primary">Atualizar</button>
 </form>

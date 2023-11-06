@@ -5,4 +5,5 @@ public class Produtos
     public string Descricao { get; set; }
     public decimal Preco { get; set; }
     public int ProdQtd { get; set;}
+    public string Imagem { get; set; }
 }

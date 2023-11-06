@@ -8,12 +8,13 @@ public class ProdutosSql : Database, IProdutosData
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "INSERT INTO Produtos VALUES (@nome, @descricao, @preco, @prod_qtd)";
+        cmd.CommandText = "INSERT INTO Produtos VALUES (@nome, @descricao, @preco, @prod_qtd, @imagem)";
 
         cmd.Parameters.AddWithValue("@nome", produto.Nome);
         cmd.Parameters.AddWithValue("@descricao", produto.Descricao);
         cmd.Parameters.AddWithValue("@preco", produto.Preco);
         cmd.Parameters.AddWithValue("@prod_qtd", produto.ProdQtd);
+        cmd.Parameters.AddWithValue("@imagem", produto.Imagem);
 
         cmd.ExecuteNonQuery();
     }
@@ -47,6 +48,7 @@ public class ProdutosSql : Database, IProdutosData
             produto.Descricao = reader.GetString(2);
             produto.Preco = reader.GetDecimal(3);
             produto.ProdQtd = reader.GetInt32(4);
+            produto.Imagem = reader.GetString(5);
 
             lista.Add(produto);
         }
@@ -73,6 +75,7 @@ public class ProdutosSql : Database, IProdutosData
             produto.Descricao = reader.GetString(2);
             produto.Preco = reader.GetDecimal(3);
             produto.ProdQtd = reader.GetInt32(4);
+            produto.Imagem = reader.GetString(5);
 
             lista.Add(produto);
         }
@@ -97,6 +100,7 @@ public class ProdutosSql : Database, IProdutosData
             produto.Descricao = reader.GetString(2);
             produto.Preco = reader.GetDecimal(3);
             produto.ProdQtd = reader.GetInt32(4);
+            produto.Imagem = reader.GetString(5);
 
             return produto;
         }
@@ -112,7 +116,8 @@ public class ProdutosSql : Database, IProdutosData
                             SET Nome = @nome,
                             Descricao = @descricao,
                             Preco = @preco,
-                            ProdQtd = @prod_qtd
+                            Prod_qtd = @prod_qtd,
+                            Imagem = @imagem
                             WHERE ProdutoId = @id";
 
         cmd.Parameters.AddWithValue("@nome", produtos.Nome);
@@ -120,6 +125,7 @@ public class ProdutosSql : Database, IProdutosData
         cmd.Parameters.AddWithValue("@preco", produtos.Preco);
         cmd.Parameters.AddWithValue("@prod_qtd", produtos.ProdQtd);
         cmd.Parameters.AddWithValue("@id", id);
+        cmd.Parameters.AddWithValue("@imagem", produtos.Imagem);
 
         cmd.ExecuteNonQuery();
     }
