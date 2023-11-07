@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 public class ProdutosController : Controller
 {
     private IProdutosData data;
+    private readonly IWebHostEnvironment _hostingEnvironment;
 
-    public ProdutosController(IProdutosData data)
+    public ProdutosController(IProdutosData data, IWebHostEnvironment hostingEnvironment)
     {
         this.data = data;
+        _hostingEnvironment = hostingEnvironment;
     }
 
     public ActionResult Index()
@@ -31,9 +33,21 @@ public class ProdutosController : Controller
     }
 
     [HttpPost]
-    public ActionResult Create(Produtos produtos)
+    public ActionResult Create(Produtos model)
     {
-        data.Create(produtos);
+        if (model.Image != null && model.Image.Length > 0)
+        {
+            model.FileName = Path.GetFileName(model.Image.FileName);
+            model.FilePath = Path.Combine(_hostingEnvironment.WebRootPath, "uploads", model.FileName);
+
+            using (var stream = new FileStream(model.FilePath!, FileMode.Create))
+            {
+                model.Image.CopyTo(stream);
+            }
+
+        }
+        data.Create(model);
+
         return RedirectToAction("Index");
     }
 
@@ -48,10 +62,10 @@ public class ProdutosController : Controller
     {
         Produtos produtos = data.Read(id);
 
-        if(produtos == null)
+        if (produtos == null)
             return RedirectToAction("Index");
 
-        return View(produtos); 
+        return View(produtos);
     }
 
     [HttpPost]

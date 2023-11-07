@@ -14,7 +14,7 @@ public class ProdutosSql : Database, IProdutosData
         cmd.Parameters.AddWithValue("@descricao", produto.Descricao);
         cmd.Parameters.AddWithValue("@preco", produto.Preco);
         cmd.Parameters.AddWithValue("@prod_qtd", produto.ProdQtd);
-        cmd.Parameters.AddWithValue("@imagem", produto.Imagem);
+        cmd.Parameters.AddWithValue("@imagem", produto.FileName??"download.jpg");
 
         cmd.ExecuteNonQuery();
     }
@@ -48,7 +48,7 @@ public class ProdutosSql : Database, IProdutosData
             produto.Descricao = reader.GetString(2);
             produto.Preco = reader.GetDecimal(3);
             produto.ProdQtd = reader.GetInt32(4);
-            produto.Imagem = reader.GetString(5);
+            produto.FileName = reader.GetString(5);
 
             lista.Add(produto);
         }
@@ -75,7 +75,7 @@ public class ProdutosSql : Database, IProdutosData
             produto.Descricao = reader.GetString(2);
             produto.Preco = reader.GetDecimal(3);
             produto.ProdQtd = reader.GetInt32(4);
-            produto.Imagem = reader.GetString(5);
+            produto.FileName = reader.GetString(5);
 
             lista.Add(produto);
         }
@@ -100,7 +100,7 @@ public class ProdutosSql : Database, IProdutosData
             produto.Descricao = reader.GetString(2);
             produto.Preco = reader.GetDecimal(3);
             produto.ProdQtd = reader.GetInt32(4);
-            produto.Imagem = reader.GetString(5);
+            produto.FileName = reader.GetString(5);
 
             return produto;
         }
@@ -125,7 +125,7 @@ public class ProdutosSql : Database, IProdutosData
         cmd.Parameters.AddWithValue("@preco", produtos.Preco);
         cmd.Parameters.AddWithValue("@prod_qtd", produtos.ProdQtd);
         cmd.Parameters.AddWithValue("@id", id);
-        cmd.Parameters.AddWithValue("@imagem", produtos.Imagem);
+        cmd.Parameters.AddWithValue("@imagem", produtos.FileName);
 
         cmd.ExecuteNonQuery();
     }

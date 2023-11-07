@@ -59,3 +59,4 @@ C:\Users\danma\Farmivery\obj\Debug\net7.0\refint\Farmivery.dll
 C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.pdb
 C:\Users\danma\Farmivery\obj\Debug\net7.0\Farmivery.genruntimeconfig.cache
 C:\Users\danma\Farmivery\obj\Debug\net7.0\ref\Farmivery.dll
+C:\Users\danma\Farmivery\bin\Debug\net7.0\Farmivery.staticwebassets.runtime.json
