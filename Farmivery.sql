@@ -63,7 +63,7 @@ create table Entregadores
 create table Farmacias
 (
 	farmaciaId int not null primary key identity,
-	nomeFarmacia varchar(50) not null,
+	nome varchar(50) not null,
 	gerenteId int not null references Farmaceuticos(farmaceuticoId),
 	idEntregador int not null references Entregadores(entregadorId),
 	cnpj varchar(18) not null,

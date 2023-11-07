@@ -2,6 +2,11 @@
 
 @{ Layout = "/Views/Shared/Layout.cshtml"; }
 
+    <form action="/produtos/search" method="POST" class="input-group mb-3">
+        <input name="search" class="form-control"/>
+        <button class="btn btn-outline-secondary">Pesquisar</button>
+    </form>
+
     <table class="table tanble-hover">
         <tr>
             <th></th>

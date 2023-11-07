@@ -59,7 +59,7 @@ public class ProdutosSql : Database, IProdutosData
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "SELECT * FORM Produtos WHERE Nome LIKE @nome";
+        cmd.CommandText = "SELECT * FROM Produtos WHERE Nome LIKE @nome";
 
         cmd.Parameters.AddWithValue("@nome", "%" + search + "%");
 
@@ -116,16 +116,14 @@ public class ProdutosSql : Database, IProdutosData
                             SET Nome = @nome,
                             Descricao = @descricao,
                             Preco = @preco,
-                            Prod_qtd = @prod_qtd,
-                            Imagem = @imagem
-                            WHERE ProdutoId = @id";
+                            Prod_qtd = @prod_qtd
+                            WHERE produtoId = @id";
 
         cmd.Parameters.AddWithValue("@nome", produtos.Nome);
         cmd.Parameters.AddWithValue("@descricao", produtos.Descricao);
         cmd.Parameters.AddWithValue("@preco", produtos.Preco);
         cmd.Parameters.AddWithValue("@prod_qtd", produtos.ProdQtd);
         cmd.Parameters.AddWithValue("@id", id);
-        cmd.Parameters.AddWithValue("@imagem", produtos.FileName);
 
         cmd.ExecuteNonQuery();
     }
