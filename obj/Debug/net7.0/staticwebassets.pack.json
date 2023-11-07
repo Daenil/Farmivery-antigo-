@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg",
+      "PackagePath": "staticwebassets\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg"
+    },
+    {
       "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download.jpg",
       "PackagePath": "staticwebassets\\uploads\\download.jpg"
+    },
+    {
+      "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\i450431.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\i450431.jpeg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Farmivery.Microsoft.AspNetCore.StaticWebAssets.props",

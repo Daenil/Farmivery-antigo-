@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ht2Ot1V6n7WJzrqR+Gi3FTukx2LcxfkekdFWj9CG8YU=",
+  "Hash": "JRqFM0JoWSEvtifSF5kOt+98MtseFD+mFiOrH4Lr8v4=",
   "Source": "Farmivery",
   "BasePath": "_content/Farmivery",
   "Mode": "Default",
@@ -17,6 +17,23 @@
   ],
   "Assets": [
     {
+      "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg",
+      "SourceId": "Farmivery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\danma\\Farmivery\\wwwroot\\",
+      "BasePath": "_content/Farmivery",
+      "RelativePath": "uploads/controlado-tarja-vermelha-generico_10_18.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg"
+    },
+    {
       "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download.jpg",
       "SourceId": "Farmivery",
       "SourceType": "Discovered",
@@ -32,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\download.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\i450431.jpeg",
+      "SourceId": "Farmivery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\danma\\Farmivery\\wwwroot\\",
+      "BasePath": "_content/Farmivery",
+      "RelativePath": "uploads/i450431.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\i450431.jpeg"
     }
   ]
 }
