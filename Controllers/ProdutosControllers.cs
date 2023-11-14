@@ -71,7 +71,20 @@ public class ProdutosController : Controller
     [HttpPost]
     public ActionResult Update(int id, Produtos produtos)
     {
+        if (produtos.Image != null && produtos.Image.Length > 0)
+        {
+            produtos.FileName = Path.GetFileName(produtos.Image.FileName);
+            produtos.FilePath = Path.Combine(_hostingEnvironment.WebRootPath, "uploads", produtos.FileName);
+
+            using (var stream = new FileStream(produtos.FilePath!, FileMode.Create))
+            {
+                produtos.Image.CopyTo(stream);
+            }
+        }
+
         data.Update(id, produtos);
+
         return RedirectToAction("Index");
     }
+
 }

@@ -8,13 +8,16 @@
     </ol>
 </nav>
 
-<form action="/produtos/update/@Model.ProdutoId" method="POST">
+<form action="/produtos/update/@Model.ProdutoId" method="POST" enctype="multipart/form-data">
     <input name="Nome" class="form-control" value="@Model.Nome" placeholder="Nome" />
     <input name="Descricao" class="form-control" value="@Model.Descricao" placeholder="Descricao" />
     <input name="Preco" class="form-control" value="@Model.Preco" placeholder="Preco" />
-    <input name="ProdQtd" class="form-control" value="@Model.ProdQtd" placeholder="Quantidade" />
-    @* <input name="Imagem" class="form-control" value="@Model.Filepath" placeholder="Link Imagem" /> *@
+    <input name="ProdQtd" class="form-control" value="@Model.ProdQtd" placeholder="Quantidade em Estoque" />
+    <input type="file" name="image" class="form-control" placeholder="Imagem" />
 
         <br/>
         <button class="btn btn-primary">Atualizar</button>
 </form>
+
+<br/>
+<a href="/produtos/index" class="btn btn-secondary">Cancelar</a>

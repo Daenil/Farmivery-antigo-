@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\10356_gardenal-100mg-caixa-com-20-comprimidos-p7896070600669_s1_637217820180139833.jpg",
+      "PackagePath": "staticwebassets\\uploads\\10356_gardenal-100mg-caixa-com-20-comprimidos-p7896070600669_s1_637217820180139833.jpg"
+    },
+    {
       "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg",
       "PackagePath": "staticwebassets\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\dipirona-monoidratada-solucao-oral-50mg-ml-com-100ml-generico-germed-295.jpg",
+      "PackagePath": "staticwebassets\\uploads\\dipirona-monoidratada-solucao-oral-50mg-ml-com-100ml-generico-germed-295.jpg"
     },
     {
       "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download (1).jpg",
@@ -11,6 +19,10 @@
     {
       "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download (2).jpg",
       "PackagePath": "staticwebassets\\uploads\\download (2).jpg"
+    },
+    {
+      "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\download.jpeg"
     },
     {
       "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download.jpg",

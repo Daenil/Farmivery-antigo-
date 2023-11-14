@@ -12,8 +12,6 @@ go
 use Farmivery
 go
 
-select * from Farmacias
-INSERT INTO Farmacias VALUES (Farmacia, 123)
 ----------------------------------------------------------------------------
 -- Criando tabelas
 ----------------------------------------------------------------------------

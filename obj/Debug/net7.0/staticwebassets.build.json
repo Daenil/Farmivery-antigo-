@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6qzVd3k69VEDJxVl7rzFIRpQPXloENn8Nrv0735D7fE=",
+  "Hash": "kA3t/waT5hYz/9TqJUN4VpHlc3TLsQYrqvrbeOjMXew=",
   "Source": "Farmivery",
   "BasePath": "_content/Farmivery",
   "Mode": "Default",
@@ -17,6 +17,23 @@
   ],
   "Assets": [
     {
+      "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\10356_gardenal-100mg-caixa-com-20-comprimidos-p7896070600669_s1_637217820180139833.jpg",
+      "SourceId": "Farmivery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\danma\\Farmivery\\wwwroot\\",
+      "BasePath": "_content/Farmivery",
+      "RelativePath": "uploads/10356_gardenal-100mg-caixa-com-20-comprimidos-p7896070600669_s1_637217820180139833.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\10356_gardenal-100mg-caixa-com-20-comprimidos-p7896070600669_s1_637217820180139833.jpg"
+    },
+    {
       "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg",
       "SourceId": "Farmivery",
       "SourceType": "Discovered",
@@ -32,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\controlado-tarja-vermelha-generico_10_18.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\dipirona-monoidratada-solucao-oral-50mg-ml-com-100ml-generico-germed-295.jpg",
+      "SourceId": "Farmivery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\danma\\Farmivery\\wwwroot\\",
+      "BasePath": "_content/Farmivery",
+      "RelativePath": "uploads/dipirona-monoidratada-solucao-oral-50mg-ml-com-100ml-generico-germed-295.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\dipirona-monoidratada-solucao-oral-50mg-ml-com-100ml-generico-germed-295.jpg"
     },
     {
       "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download (1).jpg",
@@ -66,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\download (2).jpg"
+    },
+    {
+      "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download.jpeg",
+      "SourceId": "Farmivery",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\danma\\Farmivery\\wwwroot\\",
+      "BasePath": "_content/Farmivery",
+      "RelativePath": "uploads/download.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\download.jpeg"
     },
     {
       "Identity": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\download.jpg",
