@@ -38,7 +38,7 @@ public class ProdutosSql : Database, IProdutosData
 
         SqlDataReader reader = cmd.ExecuteReader();
 
-        List<Produtos> lista = new();
+        List<Produtos> listap = new();
 
         while(reader.Read())
         {
@@ -50,9 +50,9 @@ public class ProdutosSql : Database, IProdutosData
             produto.ProdQtd = reader.GetInt32(4);
             produto.FileName = reader.GetString(5);
 
-            lista.Add(produto);
+            listap.Add(produto);
         }
-        return lista;
+        return listap;
     }
 
     public List<Produtos> Read(string search)
@@ -65,7 +65,7 @@ public class ProdutosSql : Database, IProdutosData
 
         SqlDataReader reader = cmd.ExecuteReader();
 
-        List<Produtos> lista = new List<Produtos>();
+        List<Produtos> listap = new List<Produtos>();
 
         while(reader.Read())
         {
@@ -77,9 +77,9 @@ public class ProdutosSql : Database, IProdutosData
             produto.ProdQtd = reader.GetInt32(4);
             produto.FileName = reader.GetString(5);
 
-            lista.Add(produto);
+            listap.Add(produto);
         }
-        return lista;
+        return listap;
     }
 
     public Produtos Read(int id)

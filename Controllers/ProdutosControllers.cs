@@ -13,16 +13,16 @@ public class ProdutosController : Controller
 
     public ActionResult Index()
     {
-        List<Produtos> lista = data.Read();
-        return View(lista);
+        List<Produtos> listap = data.Read();
+        return View(listap);
     }
 
     public ActionResult Search(IFormCollection form)
     {
         string search = form["search"];
 
-        List<Produtos> lista = data.Read(search);
-        return View("index", lista);
+        List<Produtos> listap = data.Read(search);
+        return View("index", listap);
     }
 
     [HttpGet]

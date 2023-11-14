@@ -35,7 +35,7 @@ public class FarmaciasSql : Database, IFarmaciasData
 
         SqlDataReader reader = cmd.ExecuteReader();
 
-        List<Farmacias> lista = new();
+        List<Farmacias> listaf = new();
 
         while(reader.Read())
         {
@@ -44,9 +44,9 @@ public class FarmaciasSql : Database, IFarmaciasData
             farmacias.Nome = reader.GetString(1);
             farmacias.Cnpj = reader.GetString(2);
 
-            lista.Add(farmacias);
+            listaf.Add(farmacias);
         }
-        return lista;
+        return listaf;
     }
 
     public List<Produtos> Read(string search)
@@ -59,7 +59,7 @@ public class FarmaciasSql : Database, IFarmaciasData
 
         SqlDataReader reader = cmd.ExecuteReader();
 
-        List<Farmacias> lista = new List<Farmacias>();
+        List<Farmacias> listaf = new List<Farmacias>();
 
         while(reader.Read())
         {
@@ -68,9 +68,9 @@ public class FarmaciasSql : Database, IFarmaciasData
             farmacias.Nome = reader.GetString(1);
             farmacias.Cnpj = reader.GetString(2);
 
-            lista.Add(farmacias);
+            listaf.Add(farmacias);
         }
-        return lista;
+        return listaf;
     }
 
     public Produtos Read(int id)
@@ -90,7 +90,7 @@ public class FarmaciasSql : Database, IFarmaciasData
             farmacias.Nome = reader.GetString(1);
             farmacias.Cnpj = reader.GetString(2);
 
-            lista.Add(farmacias);
+            listaf.Add(farmacias);
         }
 
         return null;
