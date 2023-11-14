@@ -21,7 +21,7 @@
         var cnpjInput = document.getElementById('cnpj');
         var valor = cnpjInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
         if (valor.length !== 14) {
-            alert('Por favor, insira um CNPJ válido com 14 caracteres.');
+            alert('Por favor, complete o campo de CNPJ');
             return false; // Impede o envio do formulário
         }
         return true; // Permite o envio do formulário
