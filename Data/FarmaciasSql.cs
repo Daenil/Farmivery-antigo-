@@ -11,7 +11,7 @@ public class FarmaciasSql : Database, IFarmaciasData
         cmd.CommandText = "INSERT INTO Farmacias VALUES (@nome, @cnpj)";
 
         cmd.Parameters.AddWithValue("@nome", farmacias.Nome);
-        cmd.Parameters.AddWithValue("@cnpj", farmacias.Cnpj)
+        cmd.Parameters.AddWithValue("@cnpj", farmacias.Cnpj);
 
         cmd.ExecuteNonQuery();
     }
@@ -27,7 +27,7 @@ public class FarmaciasSql : Database, IFarmaciasData
         cmd.ExecuteNonQuery();
     }
 
-    public List<Produtos> Read()
+    public List<Farmacias> Read()
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
@@ -35,7 +35,7 @@ public class FarmaciasSql : Database, IFarmaciasData
 
         SqlDataReader reader = cmd.ExecuteReader();
 
-        List<Farmacias> listaf = new();
+        List<Farmacias> lista = new();
 
         while(reader.Read())
         {
@@ -44,12 +44,12 @@ public class FarmaciasSql : Database, IFarmaciasData
             farmacias.Nome = reader.GetString(1);
             farmacias.Cnpj = reader.GetString(2);
 
-            listaf.Add(farmacias);
+            lista.Add(farmacias);
         }
-        return listaf;
+        return lista;
     }
 
-    public List<Produtos> Read(string search)
+    public List<Farmacias> Read(string search)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
@@ -59,7 +59,7 @@ public class FarmaciasSql : Database, IFarmaciasData
 
         SqlDataReader reader = cmd.ExecuteReader();
 
-        List<Farmacias> listaf = new List<Farmacias>();
+        List<Farmacias> lista = new List<Farmacias>();
 
         while(reader.Read())
         {
@@ -68,12 +68,12 @@ public class FarmaciasSql : Database, IFarmaciasData
             farmacias.Nome = reader.GetString(1);
             farmacias.Cnpj = reader.GetString(2);
 
-            listaf.Add(farmacias);
+            lista.Add(farmacias);
         }
-        return listaf;
+        return lista;
     }
 
-    public Produtos Read(int id)
+    public Farmacias Read(int id)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
@@ -90,7 +90,7 @@ public class FarmaciasSql : Database, IFarmaciasData
             farmacias.Nome = reader.GetString(1);
             farmacias.Cnpj = reader.GetString(2);
 
-            listaf.Add(farmacias);
+            return farmacias;
         }
 
         return null;

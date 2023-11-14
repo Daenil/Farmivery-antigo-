@@ -11,16 +11,16 @@ public class FarmaciaController : Controller
 
         public ActionResult Index()
     {
-        List<Farmacias> listaf = data.Read();
-        return View(listaf);
+        List<Farmacias> lista = data.Read();
+        return View(lista);
     }
 
     public ActionResult Search(IFormCollection form)
     {
         string search = form["search"];
 
-        List<Farmacias> listaf = data.Read(search);
-        return View("index", listaf);
+        List<Farmacias> lista = data.Read(search);
+        return View("index", lista);
     }
 
     [HttpGet]

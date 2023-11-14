@@ -1,0 +1,16 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/farmacias/index">farmacias</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Criar farmacia</li>
+    </ol>
+</nav>
+
+<form action="/farmacias/create" method="POST" enctype="multipart/form-data">
+    <input name="Nome" class="form-control" placeholder="Nome"/>
+    <input name="Cnpj" class="form-control" placeholder="CNPJ"/>
+
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>
