@@ -77,7 +77,7 @@ public class FarmaciasSql : Database, IFarmaciasData
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "SELECT * FROM Produtos WHERE FarmaciaId = @id";
+        cmd.CommandText = "SELECT * FROM Farmacias WHERE FarmaciaId = @id";
 
         cmd.Parameters.AddWithValue("@id", id);
 
@@ -103,7 +103,7 @@ public class FarmaciasSql : Database, IFarmaciasData
         cmd.CommandText = @"UPDATE Farmacias
                             SET Nome = @nome,
                             Cnpj = @cnpj
-                            WHERE farmaciaId = @id";
+                            WHERE FarmaciaId = @id";
 
         cmd.Parameters.AddWithValue("@nome", farmacias.Nome);
         cmd.Parameters.AddWithValue("@cnpj", farmacias.Cnpj);

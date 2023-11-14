@@ -12,6 +12,8 @@ go
 use Farmivery
 go
 
+select * from Farmacias
+INSERT INTO Farmacias VALUES (Farmacia, 123)
 ----------------------------------------------------------------------------
 -- Criando tabelas
 ----------------------------------------------------------------------------
@@ -64,8 +66,6 @@ create table Farmacias
 (
 	farmaciaId int not null primary key identity,
 	nome varchar(50) not null,
-	gerenteId int not null references Farmaceuticos(farmaceuticoId),
-	idEntregador int not null references Entregadores(entregadorId),
 	cnpj varchar(18) not null,
 )
 

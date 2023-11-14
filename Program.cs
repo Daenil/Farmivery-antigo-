@@ -11,7 +11,7 @@ builder.Services.AddTransient<IFarmaciasData, FarmaciasSql>();
 var app = builder.Build();
 
 // Configuração de Middlewares
-app.MapControllerRoute("default", "/{controller=Produtos}/{action=Index}/{id?}");
+app.MapControllerRoute("default", "/{controller=Farmacias}/{action=Index}/{id?}");
 
 app.UseStaticFiles();
 app.Run();

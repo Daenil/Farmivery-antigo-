@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 
-public class FarmaciaController : Controller
+public class FarmaciasController : Controller
 {
     private IFarmaciasData data;
 
-    public FarmaciaController(IFarmaciasData data, IWebHostEnvironment hostingEnvironment)
+    public FarmaciasController(IFarmaciasData data, IWebHostEnvironment hostingEnvironment)
     {
         this.data = data;
     } 
