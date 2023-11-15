@@ -1,0 +1,17 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/pessoas/login">Login</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cadastro de Cliente</li>
+    </ol>
+</nav>
+
+<form action="/cadastro/cliente" method="POST" enctype="multipart/form-data">
+    <input name="Nome" class="form-control" placeholder="Nome"/>
+    <input name="Email" class="form-control" placeholder="Email"/>
+    <input name="Senha" class="form-control" placeholder="senha"/>
+    <input name="Cli_celular" class="form-control" placeholder="Celular"/>
+
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>

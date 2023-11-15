@@ -6,6 +6,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddTransient<IProdutosData, ProdutosSql>();
 builder.Services.AddTransient<IFarmaciasData, FarmaciasSql>();
+builder.Services.AddTransient<IClientesData, ClientesSql>();
 
 
 var app = builder.Build();

@@ -2081,24 +2081,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\danma\\.nuget\\packages\\": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danma\\Farmivery\\Farmivery.csproj",
+      "projectUniqueName": "/workspaces/Farmivery/Farmivery.csproj",
       "projectName": "Farmivery",
-      "projectPath": "C:\\Users\\danma\\Farmivery\\Farmivery.csproj",
-      "packagesPath": "C:\\Users\\danma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danma\\Farmivery\\obj\\",
+      "projectPath": "/workspaces/Farmivery/Farmivery.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/Farmivery/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\danma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "/usr/local/dotnet/7.0.306/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2141,7 +2142,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
       }
     }
   }
