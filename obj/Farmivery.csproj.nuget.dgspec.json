@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/Farmivery/Farmivery.csproj": {}
+    "C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\Farmivery\\Farmivery.csproj": {}
   },
   "projects": {
-    "/workspaces/Farmivery/Farmivery.csproj": {
+    "C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\Farmivery\\Farmivery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/Farmivery/Farmivery.csproj",
+        "projectUniqueName": "C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\Farmivery\\Farmivery.csproj",
         "projectName": "Farmivery",
-        "projectPath": "/workspaces/Farmivery/Farmivery.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/Farmivery/obj/",
+        "projectPath": "C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\Farmivery\\Farmivery.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rafae\\OneDrive\\Documentos\\GitHub\\Farmivery\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/local/dotnet/7.0.306/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

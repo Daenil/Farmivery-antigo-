@@ -4,6 +4,11 @@
 create database Farmivery
 go
 
+=
+
+
+
+
 --use master
 
 ----------------------------------------------------------------------------
@@ -21,6 +26,7 @@ create table Pessoas
 	pessoasId int not null primary key identity, 
 	nome varchar(50) not null, 
 	email varchar(50) not null unique,
+	senha varchar(50) not null unique,
 	dataNasc varchar(11) not null,
 )
 
@@ -72,7 +78,6 @@ create table Farmacias
 create table Clientes
 (
 	clienteId int not null primary key,
-	cli_celular varchar(14) not null,
 	foreign key(clienteId) references Pessoas(pessoasId)
 )
 
@@ -112,22 +117,29 @@ create table itens_Pedidos
 --Procedure para cadastrar entregadores
 create procedure sp_cadEntregador
 (
-	@nomeEntregador varchar (50), @cpfEntregador varchar (14), @dataNascEntregador varchar(11), @salarioEntregador money
+	@nomeEntregador varchar (50), @emailEntregador varchar (50), @senhaEntregador varchar(50), @dataNascEntregador varchar(11), @salarioEntregador money,
+	@celularEntregador varchar(14)
 )
 as
 begin 
-	insert into Pessoas (pes_nome, pes_cpf, pes_dataNasc)
-	values (@nomeEntregador, @cpfEntregador, @dataNascEntregador)
+	insert into Pessoas (nome, email, senha, dataNasc)
+	values (@nomeEntregador, @emailEntregador, @senhaEntregador, @dataNascEntregador)
 
 	declare @idEntregador int
 	set @idEntregador = @@identity
 
 	insert into Entregadores(entregadorId, entregador_salario)
 	values (@idEntregador, @salarioEntregador)
+
+	declare @idCelularEntregador int
+	set @idCelularEntregador = @idEntregador
+
+	insert into Telefones(idPessoa,numero)
+	values(@idCelularEntregador, @celularEntregador)
 end
 
 --Testando Procedure sp_cadEntregador
---exec sp_cadEntregador 'Rog�rio Mendon�a', '333-333-333-33', '07-01-1999', '5000.00'
+---exec sp_cadEntregador 'Rog�rio Mendon�a', '333-333-333-33', '07-01-1999', '5000.00'
 
 --select * from Pessoas
 --Select * from Entregadores
@@ -137,43 +149,65 @@ end
 -- Procedure para cadastrar Clientes
 create Procedure sp_cadCliente
 (
-	@nome varchar(50), @cpfCli	varchar(14),	@dataNascCli varchar(11), @celularCli varchar(14)
+	@nome varchar(50), @emailCli	varchar(50), @senhaCli varchar(50),	@dataNascCli varchar(11), @celularCli varchar(14)
 )
 as 
 begin 
-	insert into Pessoas(pes_nome, pes_cpf, pes_dataNasc)
-	values	(@nome, @cpfCli, @dataNascCli)
+	insert into Pessoas(nome, email, senha, dataNasc)
+	values	(@nome, @emailCli, @senhaCli, @dataNascCli)
 
 	declare @idCli int
 	set @idCli = @@IDENTITY
 
-	insert into Clientes(clienteId, cli_celular)
-	values(@idCli, @celularCli)
+	insert into Clientes(clienteId)
+	values(@idCli)
+
+	declare @idCelularCli int
+	set @idCelularCli = @idCli
+
+	insert into Telefones (idPessoa, numero)
+	values(@idCelularCli, @celularCli)
 end
 go
 
 
 -- Testando Procedure
---exec	sp_cadCliente 'Daniel', '111-111-111-11', '15-11-2003', '(17)991798353'
+--exec sp_cadCliente 'Daniel', 'rafa@hotmail.com', '1234', '15-11-2003', '(17)991798353'
 
 --select * from clientes
---select * from Pessoas go
+--select * from Pessoas
+--select * from Telefones go
 
 -- Procedure para cadastrar Farmaceuticos
 create Procedure sp_cadFarmaceuticos
 (
-	@nomeFarmaceutico varchar(50),	@cpfFarmaceutico varchar(15), @dataNascFarmaceutico varchar(11), @salarioFarmaceutico decimal(10,2)
+	@nomeFarmaceutico varchar(50),	@emailFarmaceutico varchar(50), @senhaFarmaceutico varchar(50), @dataNascFarmaceutico varchar(11), @salarioFarmaceutico decimal(10,2),
+	@nomeFarmacia varchar(50), @cnpjFarmacia varchar(18), @celularFarmaceutico varchar(14)
 )
 as
 begin
-	insert into Pessoas(pes_nome, pes_cpf, pes_dataNasc)
-	values (@nomeFarmaceutico, @cpfFarmaceutico, @dataNascFarmaceutico)
+	insert into Pessoas(nome, email, senha, dataNasc)
+	values (@nomeFarmaceutico, @emailFarmaceutico, @senhaFarmaceutico, @dataNascFarmaceutico)
+
 
 	declare @idFarmaceutico int
 	set @idFarmaceutico = @@identity
 
 	insert into Farmaceuticos(FarmaceuticoId, salario)
 	values (@idFarmaceutico, @salarioFarmaceutico)
+
+
+	declare @idFarmacia int 
+	set @idFarmacia = @@identity
+	insert  into Farmacias(nome, cnpj)
+	values (@nomeFarmacia, @cnpjFarmacia)
+
+	declare @idCelularFarmaceutico int
+	set @idCelularFarmaceutico = @idFarmaceutico
+
+	insert into Telefones(idPessoa
+	,numero)
+	values (@idCelularFarmaceutico, @celularFarmaceutico)
 end
 go
 -- Testeando Procedure

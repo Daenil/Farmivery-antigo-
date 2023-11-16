@@ -4,7 +4,7 @@ using Microsoft.Data.SqlClient;
 
 class ClientesSql : Database, IClientesData
 {
-    public void Cadastrar(Clientes cliente)
+    public void Cadastrar(Clientes clientes)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
@@ -18,11 +18,5 @@ class ClientesSql : Database, IClientesData
 
         cmd.ExecuteNonQuery();
     }
+}
 
-//     public Pessoas? Login(string email, string senha)
-//     {
-//         // var pessoa = pessoas.SingleOrDefault(p => p.Email == email && p.Senha == senha);
-//         // return pessoa;
-        
-//     }
-// }

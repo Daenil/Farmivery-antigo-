@@ -9,49 +9,49 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Farmivery
 build_property.RootNamespace = Farmivery
-build_property.ProjectDir = /workspaces/Farmivery/
+build_property.ProjectDir = c:\Users\rafae\OneDrive\Documentos\GitHub\Farmivery\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /workspaces/Farmivery
+build_property.MSBuildProjectDirectory = c:\Users\rafae\OneDrive\Documentos\GitHub\Farmivery
 build_property._RazorSourceGeneratorDebug = 
 
-[/workspaces/Farmivery/Views/Cadastro/Cliente.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FkYXN0cm8vQ2xpZW50ZS5jc2h0bWw=
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Clientes/Cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ2FkYXN0cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Farmacias/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFybWFjaWFzL0NyZWF0ZS5jc2h0bWw=
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Farmacias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Farmacias/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFybWFjaWFzL0luZGV4LmNzaHRtbA==
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Farmacias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Farmacias/Update.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFybWFjaWFzL1VwZGF0ZS5jc2h0bWw=
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Farmacias/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFzXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Pessoas/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVzc29hcy9Mb2dpbi5jc2h0bWw=
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Pessoas/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hc1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Produtos/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHV0b3MvQ3JlYXRlLmNzaHRtbA==
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Produtos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Produtos/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHV0b3MvSW5kZXguY3NodG1s
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Produtos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Produtos/Update.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHV0b3MvVXBkYXRlLmNzaHRtbA==
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Produtos/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/Farmivery/Views/Shared/Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0xheW91dC5jc2h0bWw=
+[c:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Shared/Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
