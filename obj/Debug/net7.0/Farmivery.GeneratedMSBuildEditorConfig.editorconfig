@@ -16,8 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rafae\OneDrive\Documentos\GitHub\Farmivery
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Clientes/Cadastro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ2FkYXN0cm8uY3NodG1s
+[C:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Cadastrar/Cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cmFyXENhZGFzdHJvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Cadastrar/Cliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cmFyXENsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rafae/OneDrive/Documentos/GitHub/Farmivery/Views/Farmacias/Create.cshtml]

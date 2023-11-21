@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 public class ClientesController : Controller
 {
     private IClientesData data;
+    private IPessoasData pessoasData;
 
-    public ClientesController(IClientesData data)
+    public ClientesController(IClientesData data, IPessoasData pessoasData)
     {
         this.data = data;
+        this.pessoasData = pessoasData;
     }
 
     [HttpGet]
@@ -15,9 +17,10 @@ public class ClientesController : Controller
         return View();
     }
 
-    public ActionResult Cadastrar(Clientes clientes )
+    public ActionResult Cadastrar(Clientes cliente, Pessoas pessoa )
     {
-        data.Cadastrar(clientes);
+        data.Cadastrar(cliente);
+        pessoasData.Create(pessoa);
         return RedirectToAction("Login", "Pessoas");
 
 
