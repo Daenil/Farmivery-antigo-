@@ -27,15 +27,10 @@ create table Pessoas
 	nome varchar(50) not null, 
 	email varchar(50) not null unique,
 	senha varchar(50) not null unique,
-	dataNasc varchar(11) not null,
+	telefone varchar(15) not null unique,
+	dataNasc varchar(11) not null
 )
 
--- Tabela Telefone
-create table Telefones
-(
-	idPessoa int not null primary key references Pessoas(pessoasId),
-	numero varchar(15) not null
-)
 
 create table Endereco
 (
@@ -122,8 +117,8 @@ create procedure sp_cadEntregador
 )
 as
 begin 
-	insert into Pessoas (nome, email, senha, dataNasc)
-	values (@nomeEntregador, @emailEntregador, @senhaEntregador, @dataNascEntregador)
+	insert into Pessoas (nome, email, senha, telefone, dataNasc)
+	values (@nomeEntregador, @emailEntregador, @senhaEntregador, @celularEntregador, @dataNascEntregador)
 
 	declare @idEntregador int
 	set @idEntregador = @@identity
@@ -131,11 +126,6 @@ begin
 	insert into Entregadores(entregadorId, entregador_salario)
 	values (@idEntregador, @salarioEntregador)
 
-	declare @idCelularEntregador int
-	set @idCelularEntregador = @idEntregador
-
-	insert into Telefones(idPessoa,numero)
-	values(@idCelularEntregador, @celularEntregador)
 end
 
 --Testando Procedure sp_cadEntregador
@@ -149,12 +139,12 @@ end
 -- Procedure para cadastrar Clientes
 create Procedure sp_cadCliente
 (
-	@nome varchar(50), @emailCli	varchar(50), @senhaCli varchar(50),	@dataNascCli varchar(11), @celularCli varchar(14)
+	@nome varchar(50), @emailCli	varchar(50), @senhaCli varchar(50), @celularCli varchar(15), 	@dataNascCli varchar(11)
 )
 as 
 begin 
-	insert into Pessoas(nome, email, senha, dataNasc)
-	values	(@nome, @emailCli, @senhaCli, @dataNascCli)
+	insert into Pessoas(nome, email, senha, telefone, dataNasc)
+	values	(@nome, @emailCli, @senhaCli, @celularCli,  @dataNascCli)
 
 	declare @idCli int
 	set @idCli = @@IDENTITY
@@ -162,12 +152,6 @@ begin
 	insert into Clientes(clienteId)
 	values(@idCli)
 
-	declare @idCelularCli int
-	set @idCelularCli = @idCli
-
-	insert into Telefones (idPessoa, numero)
-	values(@idCelularCli, @celularCli)
-end
 go
 
 
@@ -186,8 +170,8 @@ create Procedure sp_cadFarmaceuticos
 )
 as
 begin
-	insert into Pessoas(nome, email, senha, dataNasc)
-	values (@nomeFarmaceutico, @emailFarmaceutico, @senhaFarmaceutico, @dataNascFarmaceutico)
+	insert into Pessoas(nome, email, senha, telefone,dataNasc)
+	values (@nomeFarmaceutico, @emailFarmaceutico, @senhaFarmaceutico, @celularFarmaceutico, @dataNascFarmaceutico)
 
 
 	declare @idFarmaceutico int
@@ -201,13 +185,6 @@ begin
 	set @idFarmacia = @@identity
 	insert  into Farmacias(nome, cnpj)
 	values (@nomeFarmacia, @cnpjFarmacia)
-
-	declare @idCelularFarmaceutico int
-	set @idCelularFarmaceutico = @idFarmaceutico
-
-	insert into Telefones(idPessoa
-	,numero)
-	values (@idCelularFarmaceutico, @celularFarmaceutico)
 end
 go
 -- Testeando Procedure

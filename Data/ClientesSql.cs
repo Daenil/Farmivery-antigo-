@@ -1,5 +1,4 @@
-using System.ComponentModel.Design;
-using System.Data.SqlTypes;
+using System.Data;
 using Microsoft.Data.SqlClient;
 
 class ClientesSql : Database, IClientesData
@@ -8,13 +7,14 @@ class ClientesSql : Database, IClientesData
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "exec sp_cadCliente @nomeCli, @emailCli, @senhaCli, @dataNascCli, @celularCli";
+        cmd.CommandText = "exec sp_cadCliente @nomeCli, @emailCli, @senhaCli,@celularLi, @dataNascCli";
 
-        cmd.Parameters.AddWithValue("@nomeCli", Clientes.Pessoas.Nome);
-        cmd.Parameters.AddWithValue("@emailCli", Clientes.Pessoas.Email);
-        cmd.Parameters.AddWithValue("@senhaCli", Clientes.Pessoas.Senha);
-        cmd.Parameters.AddWithValue("@dataNascCli",Clientes.Pessoas.DataNasc);
-        cmd.Parameters.AddWithValue("@celularCli", Clientes.Cli_celular);
+        cmd.Parameters.AddWithValue("@nomeCli", clientes.Pessoas.Nome);
+        cmd.Parameters.AddWithValue("@emailCli", clientes.Pessoas.Email);
+        cmd.Parameters.AddWithValue("@senhaCli", clientes.Pessoas.Senha);
+        cmd.Parameters.AddWithValue("@celularCli", clientes.Pessoas.Telefone);
+        cmd.Parameters.AddWithValue("@dataNascCli",clientes.Pessoas.DataNasc);
+
 
         cmd.ExecuteNonQuery();
     }
