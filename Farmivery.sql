@@ -4,7 +4,7 @@
 create database Farmivery
 go
 
-=
+
 
 
 
@@ -224,10 +224,9 @@ go
 -------------------------------------------------------------------------------------------
 create view v_Clientes
 as
-	select P.nome, P.email, P.senha, P.telefone, P.dataNasc
-	from Pessoas P, Clientes C
-	where P.pessoasId = C.clienteId
+	select  P.pessoasId,P.nome, P.email, P.senha, P.telefone, P.dataNasc
+	from Pessoas as P inner join Clientes C on P.pessoasId = C.clienteId
 go
 
-select v_Clientes.email, v_Clientes.senha from v_Clientes
+--select v_Clientes.email, v_Clientes.senha from v_Clientes
 
