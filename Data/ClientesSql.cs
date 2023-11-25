@@ -19,15 +19,37 @@ class ClientesSql : Database, IClientesData
 
         cmd.ExecuteNonQuery();
     }
-    public List<Clientes> Login()
+    public List<Clientes> Login(string Email, string Senha)
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "select v_Clientes.email, v_Clientes.senha from v_Clientes";
+        cmd.CommandText = "select v_Clientes.pessoasId,v_Clientes.email, v_Clientes.senha from v_Clientes";
 
         SqlDataReader reader = cmd.ExecuteReader();
 
         List<Clientes> listaC = new();
+
+        while(reader.Read())
+        {
+            Clientes cliente  = new Clientes();
+            cliente.Pessoas.PessoasId = reader.GetInt32(0);
+            cliente.Pessoas.Email = reader.GetString(1);
+            cliente.Pessoas.Senha = reader.GetString(2);
+
+            listaC.Add(cliente);
+
+            if(email == cliente.Pessoas.Email && senha == cliente.Pessoas.Senha)
+            {
+                return listaC;
+            }
+
+            else
+            {
+                return null;
+            }
+
+        }
+        return null;
 
         
 

@@ -219,3 +219,15 @@ begin
 end
 go
 
+-------------------------------------------------------------------------------------------
+--Criando Views
+-------------------------------------------------------------------------------------------
+create view v_Clientes
+as
+	select P.nome, P.email, P.senha, P.telefone, P.dataNasc
+	from Pessoas P, Clientes C
+	where P.pessoasId = C.clienteId
+go
+
+select v_Clientes.email, v_Clientes.senha from v_Clientes
+

@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 
 public class ClientesController : Controller
@@ -27,36 +28,36 @@ public class ClientesController : Controller
     }
 
 
-    // [HttpGet]
-    // public ActionResult Login()
-    // {
-    //     return View();
-    // }
+    [HttpGet]
+    public ActionResult Login()
+    {
+        return View();
+    }
 
-    // [HttpPost]
-    // public ActionResult Login(IFormCollection form)
-    // {
-    //     string? Email = form["email"];
-    //     string? Senha = form["senha"];
+    [HttpPost]
+    public ActionResult Login(IFormCollection form)
+    {
+        string? Email = form["Email"];
+        string? Senha = form["Senha"];
 
-    //     var pessoa = data.Login(Email!, Senha!);
+        List<Clientes> cliente  = data.Login(email!, senha!);
 
-    //     if(pessoa == null)
-    //     {
-    //         ViewBag.Erro = "Usuário ou senha incorretos";
-    //         return View();
-    //     }
+        if(cliente == null)
+        {
+            ViewBag.Erro = "Usuário ou senha incorretos";
+            return View();
+        }
 
-    //     HttpContext.Session.SetString("pessoa", JsonSerializer.Serialize(pessoa));
-    //     return RedirectToAction("Index", "Home");
-    // }
+        HttpContext.Session.SetString("pessoa", JsonSerializer.Serialize(cliente));
+        return RedirectToAction("Index", "Home");
+    }
 
-    // [HttpGet]
-    // public ActionResult Logout()
-    // {
-    //     HttpContext.Session.Clear();
-    //     return RedirectToAction("Login", "Pessoas");
-    // }
+    [HttpGet]
+    public ActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("Login", "Pessoas");
+    }
 
     
 }
