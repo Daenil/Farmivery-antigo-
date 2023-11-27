@@ -1,7 +1,7 @@
-﻿// WebApplication
+﻿//WebApplication
 var builder = WebApplication.CreateBuilder(args);
 
-// Adição de Middlewares
+//Adição de Middlewares
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddTransient<IProdutosData, ProdutosSql>();
@@ -11,13 +11,15 @@ builder.Services.AddTransient<IPessoasData, PessoasSql>();
 
 builder.Services.AddSession();
 
+// Adicione a configuração do HttpContextAccessor
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
 app.UseSession();
 
-// Configuração de Middlewares
-app.MapControllerRoute("default", "/{controller=Pessoas}/{action=Login}/{id?}");
+//Configurações de Middlewares
+app.MapControllerRoute("default", "/{controller=Clientes}/{action=Login}/{id?}");
 
 app.UseStaticFiles();
 app.Run();

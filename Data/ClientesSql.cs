@@ -19,43 +19,32 @@ class ClientesSql : Database, IClientesData
 
         cmd.ExecuteNonQuery();
     }
-    public List<Clientes> Login(string Email, string Senha)
+public Clientes Login(string Email, string Senha)
+{
+    SqlCommand cmd = new SqlCommand();
+    cmd.Connection = connection;
+    cmd.CommandText = "SELECT pessoasId, email, senha FROM v_Clientes WHERE email = @Email AND senha = @Senha";
+
+    cmd.Parameters.AddWithValue("@Email", Email);
+    cmd.Parameters.AddWithValue("@Senha", Senha);
+
+    SqlDataReader reader = cmd.ExecuteReader();
+
+    if (reader.Read())
     {
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = connection;
-        cmd.CommandText = "select v_Clientes.pessoasId,v_Clientes.email, v_Clientes.senha from v_Clientes";
+        Clientes cliente = new Clientes();
+        cliente.Pessoas.PessoasId = reader.GetInt32(0);
+        cliente.Pessoas.Email = reader.GetString(1);
+        cliente.Pessoas.Senha = reader.GetString(2);
 
-        SqlDataReader reader = cmd.ExecuteReader();
+        reader.Close();
 
-        List<Clientes> listaC = new();
-
-        while(reader.Read())
-        {
-            Clientes cliente  = new Clientes();
-            cliente.Pessoas.PessoasId = reader.GetInt32(0);
-            cliente.Pessoas.Email = reader.GetString(1);
-            cliente.Pessoas.Senha = reader.GetString(2);
-
-            listaC.Add(cliente);
-
-            if(Email == reader.GetString(1) && Senha == reader.GetString(2))
-            {
-                return listaC;
-            }
-
-            else
-            {
-                return null;
-            }
-
-        }
-        return null;
-
-        
-
-
-
-
+        return cliente;
     }
+
+    reader.Close();
+    return null;
+}
+
 }
 

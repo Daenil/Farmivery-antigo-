@@ -34,23 +34,33 @@ public class ClientesController : Controller
         return View();
     }
 
+    
     [HttpPost]
     public ActionResult Login(IFormCollection form)
     {
         string? Email = form["Email"];
         string? Senha = form["Senha"];
 
-        List<Clientes> cliente  = data.Login(Email!, Senha!);
+        if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Senha))
+        {
+            ViewBag.Erro = "Email e senha são obrigatórios";
+            return View();
+        }
 
-        if(cliente == null)
+        // Agora, o método Login retorna um único cliente ou null
+        Clientes cliente = data.Login(Email!, Senha!);
+
+        if (cliente == null)
         {
             ViewBag.Erro = "Usuário ou senha incorretos";
             return View();
         }
 
-        HttpContext.Session.SetString("pessoa", JsonSerializer.Serialize(cliente));
+        HttpContext.Session.SetString("pessoa", JsonSerializer.Serialize(cliente.Pessoas));
         return RedirectToAction("Index", "Home");
     }
+
+
 
     [HttpGet]
     public ActionResult Logout()

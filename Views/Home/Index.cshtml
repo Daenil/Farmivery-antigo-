@@ -10,12 +10,12 @@
 </head>
 <body class="container">
     Bem vindo!<br/>
-    @{
-        string? session = HttpContextAccessor.HttpContext.Session.GetString("pessoa");
-        Pessoas? pessoa = JsonSerializer.Deserialize<Pessoas>(session);
-    }
-    <h1>@pessoa.Nome</h1>
+@{
+    string? session = HttpContextAccessor.HttpContext.Session.GetString("pessoa");
+    Pessoas? pessoa = !string.IsNullOrEmpty(session) ? JsonSerializer.Deserialize<Pessoas>(session) : null;
+}
+<h1>@(pessoa != null ? pessoa.Nome : "Visitante")</h1>
 
-    <a href="/pessoas/logout" class="btn btn-danger">Sair</a>
+<a href="/pessoas/logout" class="btn btn-danger">Sair</a>
 </body>
 </html>
