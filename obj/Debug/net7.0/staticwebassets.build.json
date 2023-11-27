@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< Updated upstream
   "Hash": "PPo0b0YNSQiTTYwF3zxyZ9JVzr2QvkmRBrw2SdwMlRw=",
+=======
+  "Hash": "HArdAcOijudWdjZCr1krsuE9m9jRnz1yWVWu5wJ1sf4=",
+>>>>>>> Stashed changes
   "Source": "Farmivery",
   "BasePath": "_content/Farmivery",
   "Mode": "Default",

@@ -5,10 +5,13 @@
       "PackagePath": "staticwebassets\\uploads\\10356_gardenal-100mg-caixa-com-20-comprimidos-p7896070600669_s1_637217820180139833.jpg"
     },
     {
+<<<<<<< Updated upstream
       "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\Screenshot 2023-10-15 230849.png",
       "PackagePath": "staticwebassets\\uploads\\Screenshot 2023-10-15 230849.png"
     },
     {
+=======
+>>>>>>> Stashed changes
       "Id": "C:\\Users\\danma\\Farmivery\\wwwroot\\uploads\\cartucho-dipirona-gotas-898-me-removebg-preview.png",
       "PackagePath": "staticwebassets\\uploads\\cartucho-dipirona-gotas-898-me-removebg-preview.png"
     },
