@@ -38,7 +38,7 @@ class ClientesSql : Database, IClientesData
 
             listaC.Add(cliente);
 
-            if(email == cliente.Pessoas.Email && senha == cliente.Pessoas.Senha)
+            if(Email == reader.GetString(1) && Senha == reader.GetString(2))
             {
                 return listaC;
             }

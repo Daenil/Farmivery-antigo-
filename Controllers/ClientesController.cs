@@ -40,7 +40,7 @@ public class ClientesController : Controller
         string? Email = form["Email"];
         string? Senha = form["Senha"];
 
-        List<Clientes> cliente  = data.Login(email!, senha!);
+        List<Clientes> cliente  = data.Login(Email!, Senha!);
 
         if(cliente == null)
         {
