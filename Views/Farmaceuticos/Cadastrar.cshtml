@@ -1,0 +1,20 @@
+@{ Layout = "/Views/Shared/Layout.cshtml"; }
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/clientes/login">Login</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cadastro de Farmaceutico</li>
+    </ol>
+</nav>
+
+<form action="/farmaceuticos/cadastrar" method="POST">
+    <input type="text" name="Pessoas.Nome" class="form-control" placeholder="Nome"/>
+    <input type="text" name="Pessoas.Email" class="form-control" placeholder="Email"/>
+    <input type="password" name="Pessoas.Senha" class="form-control" placeholder="Senha"/>
+    <input type="text" name="Pessoas.DataNasc" class="form-control" placeholder="Data de Nascimento"/>
+    <input type="text" name="Farmacias.Nome" class="form-control" placeholder="Nome da Farmacia"/>
+    <input type="text" name="Farmacias.Cnpj" class="form-control" placeholder="CNPJ da Farmacia"/>
+    <input type="text" name="Pessoas.Telefone" class="form-control" placeholder="Telefone"/>
+
+    <br/>
+    <button class="btn btn-primary">Salvar</button>
+</form>

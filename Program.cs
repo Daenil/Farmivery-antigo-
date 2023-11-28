@@ -8,6 +8,7 @@ builder.Services.AddTransient<IProdutosData, ProdutosSql>();
 builder.Services.AddTransient<IFarmaciasData, FarmaciasSql>();
 builder.Services.AddTransient<IClientesData, ClientesSql>();
 builder.Services.AddTransient<IPessoasData, PessoasSql>();
+builder.Services.AddTransient<IFarmaceuticosData, FarmaceuticosSql>();
 
 builder.Services.AddSession();
 

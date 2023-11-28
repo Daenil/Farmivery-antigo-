@@ -18,13 +18,12 @@ public class ClientesController : Controller
         return View();
     }
 
+    [HttpPost]
     public ActionResult Cadastrar(Clientes cliente, Pessoas pessoa )
     {
         data.Cadastrar(cliente);
         pessoasData.Create(pessoa);
         return RedirectToAction("Login", "Pessoas");
-
-
     }
 
 
@@ -56,18 +55,14 @@ public class ClientesController : Controller
             return View();
         }
 
-        HttpContext.Session.SetString("pessoa", JsonSerializer.Serialize(cliente.Pessoas));
+        HttpContext.Session.SetString("cliente", JsonSerializer.Serialize(cliente.Pessoas));
         return RedirectToAction("Index", "Home");
     }
 
-
-
-    [HttpGet]
-    public ActionResult Logout()
-    {
-        HttpContext.Session.Clear();
-        return RedirectToAction("Login", "Pessoas");
-    }
-
-    
+    // [HttpGet]
+    // public ActionResult Logout()
+    // {
+    //     HttpContext.Session.Clear();
+    //     return RedirectToAction("Login", "Clientes");
+    // }
 }

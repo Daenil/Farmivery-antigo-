@@ -5,7 +5,7 @@ create database Farmivery
 go
 
 
-
+select * from Pessoas
 
 
 
@@ -50,7 +50,6 @@ create table Endereco
 create table Farmaceuticos
 (
 	FarmaceuticoId int not null primary key references Pessoas(pessoasId),
-	salario decimal(10,2) not null
 )
 
 --Tabela Entregadores
@@ -194,12 +193,14 @@ begin
     VALUES (@idCli, @rua, @numero, @bairro, @cep, @cidade, @estado);
 end
 go
--- Testando Procedure
+
+/*Testando Procedure
 exec sp_cadCliente 'Daniel', 'rafa@hotmail.com', '1234','(17)991798353', '15-11-2003', 'rua testee', 56 , 'bairro teste', '15046460', 'cidade teste', 'estado teste'
 
 select * from clientes
 select * from Pessoas
 select * from Endereco
+*/
 
 -- 3 - Procedure para cadastrar Farmaceuticos
 create PROCEDURE sp_cadFarmaceuticos
@@ -208,7 +209,6 @@ create PROCEDURE sp_cadFarmaceuticos
 	@emailFarmaceutico varchar(50),
 	@senhaFarmaceutico varchar(50),
 	@dataNascFarmaceutico varchar(11),
-	@salarioFarmaceutico money,
 	@nomeFarmacia varchar(50),
 	@cnpjFarmacia varchar(18),
 	@celularFarmaceutico varchar(14)
@@ -225,22 +225,23 @@ BEGIN
     SET @idFarmaceutico = SCOPE_IDENTITY();
 
     -- Inserir na tabela Farmaceuticos
-    INSERT INTO Farmaceuticos (FarmaceuticoId, salario)
-    VALUES (@idFarmaceutico, @salarioFarmaceutico);
+    INSERT INTO Farmaceuticos (FarmaceuticoId)
+    VALUES (@idFarmaceutico);
 
     -- Inserir na tabela Farmacias
     INSERT INTO Farmacias (gerenteId, nome, cnpj)
     VALUES (@idFarmaceutico, @nomeFarmacia, @cnpjFarmacia);
 END;
 go
+
 -- Testeando Procedure
-exec sp_cadFarmaceuticos 'Eduardo Gomes da silva Pereira', 'Farmatec@outlook.com', 'senha123', '15-11-1995', 4500.00, 'Farmatec', '13.345.678/0001-90','(17)993514992' 
+exec sp_cadFarmaceuticos 'Eduardo Gomes da silva Pereira', 'Farmatec@outlook.com', 'senha123', '11-11-1995', 'Farmatec', '13.345.678/0001-90','(17)993514992' 
 select * from Farmacias
 select * from Farmaceuticos
 select * from Pessoas
 
 -- 4 - procedure Endereco
-alter PROCEDURE sp_cadEndereco
+create PROCEDURE sp_cadEndereco
 (
     @rua varchar(50),
     @numero int,
@@ -262,6 +263,7 @@ BEGIN
     VALUES (@idPessoa, @rua, @numero, @bairro, @cep, @cidade, @estado);
 END;
 go
+
 -- testando Procedure
 exec sp_cadEndereco 'rua teste1', 35, 'Bairro teste1', '14044150', 'cidade teste1', 'estado teste1'
 select * from Endereco
@@ -437,6 +439,7 @@ as
 	select vf.Nome 'Nome_Farmaceutico', Vfar.Nome_Farmácia, vf.Email, vf.Telefone
 	from v_Farmacias Vfar inner join v_Farmaceuticos Vf on vfar.Gerente_código = vf.Farmaceutico_codigo
 go
+
 --Executando View
 select * from v_Farmacias_Farmaceuticos
 

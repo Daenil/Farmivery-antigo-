@@ -8,7 +8,7 @@ class ClientesSql : Database, IClientesData
     {
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = connection;
-        cmd.CommandText = "exec sp_cadCliente @nomeCli, @emailCli, @senhaCli,@celularLi, @dataNascCli";
+        cmd.CommandText = "exec sp_cadCliente @nomeCli, @emailCli, @senhaCli,@celularCli, @dataNascCli";
 
         cmd.Parameters.AddWithValue("@nomeCli", cliente.Pessoas.Nome);
         cmd.Parameters.AddWithValue("@emailCli", cliente.Pessoas.Email);

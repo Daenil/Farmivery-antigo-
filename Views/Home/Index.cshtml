@@ -14,8 +14,14 @@
     string? session = HttpContextAccessor.HttpContext.Session.GetString("pessoa");
     Pessoas? pessoa = !string.IsNullOrEmpty(session) ? JsonSerializer.Deserialize<Pessoas>(session) : null;
 }
+
+<a href="/produtos/index" class="btn btn-primary">Produtos</a>
+
+<a href="/farmacias/index" class="btn btn-primary">Farmácias</a>
+
 <h1>@(pessoa != null ? pessoa.Nome : "Visitante")</h1>
 
-<a href="/pessoas/logout" class="btn btn-danger">Sair</a>
+<a href="/clientes/login" class="btn btn-danger">Sair</a>
+
 </body>
 </html>
